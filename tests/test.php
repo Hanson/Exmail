@@ -15,7 +15,20 @@ $testMail = 'hanson@job1.xyz';
 
 $exmail = new \Hanccc\Exmail($client, $secret);
 
-print_r($exmail->token);
-print_r($exmail->getInfo($testMail));
+//pass
+//print_r($exmail->token);
 
-//$exmail->sync(['Action' => \Hanccc\Exmail::MOD, 'Alias' => 'hanson@job1.xyz', 'Name' => 'hanccc']);
+//print_r($exmail->sync(['action' => \Hanccc\Exmail::MOD, 'alias' => 'hanson@job1.xyz', 'name' => 'hanccc', 'gender' => 1, 'position' => 'ceo', 'slave' => 'han', 'access_token' => $exmail->token]));
+
+//pass
+//print_r($exmail->getAuthKey($testMail));
+print_r($exmail->login($testMail));
+
+//pass
+//print_r($exmail->count($testMail));
+
+//pass
+//print_r($exmail->getInfo($testMail));
+
+//pass
+//print_r($exmail->check([$testMail, $testMail]));
