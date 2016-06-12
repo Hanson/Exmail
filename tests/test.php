@@ -8,27 +8,45 @@
 
 require __DIR__ . './../vendor/autoload.php';
 
-$client = 'hanccc';
-$secret = '4b3a04ba2bc85d4412f13d882496c8f3';
+$client = 'your client';
+$secret = 'your secret';
 
-$testMail = 'hanson@job1.xyz';
+$testMail = 'test email';
 
 $exmail = new \Hanccc\Exmail($client, $secret);
 
-//pass
-//print_r($exmail->token);
 
-//print_r($exmail->sync(['action' => \Hanccc\Exmail::MOD, 'alias' => 'hanson@job1.xyz', 'name' => 'hanccc', 'gender' => 1, 'position' => 'ceo', 'slave' => 'han', 'access_token' => $exmail->token]));
+print_r($exmail->getAuthKey($testMail));
 
-//pass
-//print_r($exmail->getAuthKey($testMail));
+
 print_r($exmail->login($testMail));
 
-//pass
-//print_r($exmail->count($testMail));
 
-//pass
-//print_r($exmail->getInfo($testMail));
+print_r($exmail->count($testMail));
 
-//pass
-//print_r($exmail->check([$testMail, $testMail]));
+
+print_r($exmail->getInfo($testMail));
+
+
+print_r($exmail->check([$testMail, $testMail]));
+
+
+print_r($exmail->count($testMail));
+
+
+print_r($exmail->addGroup('tech1112', 'tech113@job1.xyz'));
+
+
+print_r($exmail->delGroup('tech1@job1.xyz'));
+
+
+print_r($exmail->addMember('tech13@job1.xyz', $testMail));
+
+
+print_r($exmail->delMember('tech13@job1.xyz', $testMail));
+
+
+print_r($exmail->syncParty(\Hanccc\Exmail::DEL, '市场部'));
+
+
+print_r($exmail->listParty());
