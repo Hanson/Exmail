@@ -6,7 +6,7 @@
 
 ```
 
-#初始化
+# 初始化
 $exmail = new \Hanccc\Exmail($client, $secret);
 
 # 获取AuthKey
