@@ -1,6 +1,9 @@
 # Exmail
 腾讯企业邮箱API
 
+## Install
+
+`composer require hanccc/exmail`
 
 ## Usage
 
