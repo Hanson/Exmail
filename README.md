@@ -17,16 +17,21 @@
 $exmail = new \Hanccc\Exmail($client_id, $client_secret);
 
 # 获取AuthKey
-$exmail->getAuthKey($email);
+$authKey = $exmail->getAuthKey($email);
 
 # 单点登录
-$exmail->login($email);
+$link = $exmail->login($email);
+<a href="<?= $link ?>">
 
 # 获取未读邮件数量
-$exmail->count($email);
+$count = $exmail->count($email);
 
 # 获取邮箱信息
-$exmail->getInfo($email);
+$user = $exmail->getInfo($email);
+echo $user->Name;
+echo $user->Gender;
+echo $user->Position;
+...
 
 # 检查邮箱是否可用
 $exmail->check([$email, $email]);
@@ -44,6 +49,7 @@ $exmail->addMember('tech@mail.com', $email);
 $exmail->delMember('tech@mail.com', $email);
 
 # 同步邮件群组
+//Exmail::MOD 修改， Exmail::ADD 增加， Exmail::DEL 删除
 $exmail->syncParty(\Hanccc\Exmail::DEL, '市场部');
 
 # 列出组织架构
