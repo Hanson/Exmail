@@ -5,44 +5,48 @@
 
 `composer require hanccc/exmail`
 
+## Notice
+
+具体返回参数请查看 [在线文档](http://wenku.baidu.com/view/71d452dc2cc58bd63186bdd2.html?re=view)
+
 ## Usage
 
 ```
 
 # 初始化
-$exmail = new \Hanccc\Exmail($client, $secret);
+$exmail = new \Hanccc\Exmail($client_id, $client_secret);
 
 # 获取AuthKey
-print_r($exmail->getAuthKey($testMail));
+$exmail->getAuthKey($email);
 
 # 单点登录
-print_r($exmail->login($testMail));
+$exmail->login($email);
 
 # 获取未读邮件数量
-print_r($exmail->count($testMail));
+$exmail->count($email);
 
 # 获取邮箱信息
-print_r($exmail->getInfo($testMail));
+$exmail->getInfo($email);
 
 # 检查邮箱是否可用
-print_r($exmail->check([$testMail, $testMail]));
+$exmail->check([$email, $email]);
 
 # 增加邮件群组
-print_r($exmail->addGroup('tech1112', 'tech113@job1.xyz'));
+$exmail->addGroup('tech', 'tech@mail.com');
 
 # 删除邮件群组
-print_r($exmail->delGroup('tech1@job1.xyz'));
+$exmail->delGroup('tech@mail.com');
 
 # 增加邮箱到某邮件群组
-print_r($exmail->addMember('tech13@job1.xyz', $testMail));
+$exmail->addMember('tech@mail.com', $email);
 
 # 删除某邮件群组的邮箱
-print_r($exmail->delMember('tech13@job1.xyz', $testMail));
+$exmail->delMember('tech@mail.com', $email);
 
 # 同步邮件群组
-print_r($exmail->syncParty(\Hanccc\Exmail::DEL, '市场部'));
+$exmail->syncParty(\Hanccc\Exmail::DEL, '市场部');
 
 # 列出组织架构
-print_r($exmail->listParty());
+$exmail->listParty();
 
 ```
