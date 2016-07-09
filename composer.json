@@ -1,5 +1,5 @@
 {
-  "name": "hanccc/exmail",
+  "name": "hanson/exmail",
   "require": {
     "guzzlehttp/guzzle": "^6.2"
   },
