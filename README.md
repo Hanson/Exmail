@@ -3,7 +3,7 @@
 
 ## Install
 
-`composer require hanccc/exmail`
+`composer require hanson/exmail`
 
 ## Notice
 
